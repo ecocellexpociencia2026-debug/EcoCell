@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,151 +6,950 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#102b25">
 <title>EcoCell | Energía que nace de la naturaleza</title>
+
 <style>
-:root{--forest:#102b25;--green:#1d6b4e;--mint:#b8e7c9;--lime:#d7f36a;--ink:#18332b;--muted:#64766e;--paper:#f5f8f4;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink)}
-button,a{font:inherit}a{color:inherit;text-decoration:none}.welcome{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 75% 20%,#286d4e 0,transparent 34%),linear-gradient(135deg,#0b211c,#153e30 65%,#1d6046);transition:opacity .65s ease,visibility .65s ease}.welcome.hide{opacity:0;visibility:hidden;pointer-events:none}.welcome-card{width:min(680px,100%);padding:clamp(30px,6vw,62px);text-align:center;border:1px solid #ffffff2b;border-radius:28px;background:#ffffff0d;backdrop-filter:blur(14px);color:white;box-shadow:0 24px 80px #0003;animation:rise .8s ease both}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--mint);font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:25px;height:1px;background:currentColor}.welcome h1{font-size:clamp(3.5rem,11vw,6.5rem);line-height:.95;letter-spacing:-.07em;margin:22px 0 14px}.welcome h1 span{color:var(--lime)}.tagline{font-size:clamp(1.05rem,2.8vw,1.35rem);font-weight:650;color:#d8f1df;margin:0 0 14px}.welcome p{max-width:510px;margin:0 auto 30px;color:#d4e5dc;line-height:1.75}.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 23px;border:0;border-radius:999px;background:var(--lime);color:#183323;font-weight:850;cursor:pointer;box-shadow:0 8px 22px #0002;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}.btn:hover,.btn:focus-visible{transform:translateY(-4px) scale(1.035);box-shadow:0 14px 30px #0003;background:#e7ff8b;outline:none}.btn:active{transform:translateY(-1px) scale(.99)}.btn-dark{background:var(--forest);color:white}.btn-dark:hover,.btn-dark:focus-visible{background:var(--green);color:white}
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-header{position:sticky;top:0;z-index:5;background:#f5f8f4eF;backdrop-filter:blur(14px);border-bottom:1px solid #dce7df}.nav{width:min(1120px,calc(100% - 40px));margin:auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:1.35rem;font-weight:950;letter-spacing:-.06em;color:var(--forest)}.brand span{color:var(--green)}.navlinks{display:flex;gap:23px;align-items:center}.navlinks a{font-size:.9rem;font-weight:750;color:#496157;transition:color .2s ease,transform .2s ease}.navlinks a:hover{color:var(--green);transform:translateY(-2px)}.menu-toggle{display:none;border:0;background:transparent;font-size:1.5rem;color:var(--forest);cursor:pointer}
-main{overflow:hidden}.container{width:min(1120px,calc(100% - 40px));margin:auto}.hero{position:relative;padding:90px 0 78px;background:linear-gradient(130deg,#e7f3e9,#f5f8f4 60%)}.hero:after{content:"";position:absolute;width:390px;height:390px;border:1px solid #a5cdb3;border-radius:50%;right:-110px;top:-170px;box-shadow:0 0 0 35px #b8e7c922,0 0 0 75px #b8e7c914}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center}.hero h2{font-size:clamp(2.8rem,7vw,5.5rem);line-height:.98;letter-spacing:-.075em;margin:18px 0;color:var(--forest)}.hero h2 span{color:var(--green)}.hero p{max-width:650px;color:#526b60;line-height:1.8;font-size:1.05rem}.hero-art{aspect-ratio:1;border-radius:34px;background:linear-gradient(145deg,#123c2d,#2c8059);display:grid;place-items:center;color:#d7f36a;box-shadow:0 25px 60px #1d6b4e30;position:relative;overflow:hidden}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff38;border-radius:50%;width:78%;aspect-ratio:1}.hero-art:after{width:55%}.cell-icon{font-size:clamp(5rem,12vw,8rem);z-index:1;filter:drop-shadow(0 10px 14px #0004)}
-section{padding:78px 0}.section-head{max-width:720px;margin-bottom:34px}.kicker{color:var(--green);font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.section-head h2{font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-.06em;color:var(--forest);margin:10px 0}.section-head p{color:var(--muted);line-height:1.75;margin:0}.members{background:white}.member-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.member{padding:22px 17px;border:1px solid #e1ebe3;border-radius:17px;background:#fbfdfb;min-height:110px;display:flex;align-items:center;gap:13px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.member:hover{transform:translateY(-6px);border-color:#a6d2b4;box-shadow:0 15px 30px #174b3014}.avatar{flex:0 0 39px;width:39px;height:39px;border-radius:13px;background:#e3f2e7;color:var(--green);display:grid;place-items:center;font-weight:900}.member strong{font-size:.94rem;line-height:1.35}
-.content-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.info-card{background:white;border:1px solid #e1eae3;border-radius:20px;padding:25px;transition:transform .25s ease,box-shadow .25s ease}.info-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px #183d2910}.info-card .number{font-size:.75rem;font-weight:900;color:var(--green);letter-spacing:.12em}.info-card h3{margin:10px 0;color:var(--forest);font-size:1.25rem}.info-card p,.info-card li{color:#5e7067;line-height:1.7}.info-card ul{padding-left:20px;margin-bottom:0}.wide{grid-column:1/-1}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:22px;border-radius:17px;background:#eaf4ec;border:1px solid #d8e9dc}.step b{display:block;color:var(--green);font-size:.8rem;margin-bottom:9px}.step p{margin:0;color:#536b5e;line-height:1.65}
-.results{background:var(--forest);color:white}.results .section-head h2{color:white}.results .section-head p{color:#c2d8cb}.results .kicker{color:var(--lime)}.result-note{padding:22px;border:1px dashed #9ac7a8;border-radius:17px;color:#d4e9dc;line-height:1.7}
-.drive{background:linear-gradient(135deg,#e5f2e7,#f7faf6)}.drive-card{display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center;padding:35px;border:1px solid #d7e8da;background:#ffffffc9;border-radius:25px}.drive-card h2{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.06em;margin:8px 0;color:var(--forest)}.drive-card p{color:var(--muted);line-height:1.7;max-width:590px}.qr-wrap{width:170px;height:170px;border-radius:18px;background:white;border:1px solid #e0e9e1;display:grid;place-items:center;padding:12px;box-shadow:0 10px 25px #183d2910;transition:transform .25s ease,box-shadow .25s ease}.qr-wrap:hover{transform:scale(1.06);box-shadow:0 16px 34px #1d6b4e25}.qr-wrap img{width:100%;height:100%;object-fit:contain}.qr-placeholder{font-size:.8rem;text-align:center;color:#819087;line-height:1.5}
-footer{padding:28px 0;background:#0b211c;color:#a9c3b4;text-align:center;font-size:.85rem}footer strong{color:#e4f3e8}
-@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-art{max-width:300px;aspect-ratio:1;margin:auto}.member-grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:13px}.navlinks a{font-size:.82rem}}
-@media(max-width:620px){.nav{min-height:64px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px 22px;background:var(--paper);border-bottom:1px solid #dce7df;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.hero{padding:65px 0}.hero-art{max-width:220px}.member-grid,.content-grid,.steps{grid-template-columns:1fr}.wide{grid-column:auto}.drive-card{grid-template-columns:1fr;text-align:center;padding:25px}.qr-wrap{margin:auto}.drive-card .btn{width:100%}section{padding:60px 0}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+:root {
+  --forest: #102b25;
+  --green: #1d6b4e;
+  --mint: #b8e7c9;
+  --lime: #d7f36a;
+  --ink: #18332b;
+  --muted: #64766e;
+  --paper: #f5f8f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { font: inherit; cursor: pointer; }
+
+/* BIENVENIDA */
+
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at 75% 20%, #286d4e, transparent 35%),
+              linear-gradient(135deg, #0b211c, #153e30 65%, #1d6046);
+  transition: opacity .6s, visibility .6s;
+}
+
+.welcome.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.welcome-card {
+  width: min(680px, 100%);
+  padding: 55px 35px;
+  text-align: center;
+  border: 1px solid #ffffff30;
+  border-radius: 28px;
+  background: #ffffff0d;
+  backdrop-filter: blur(14px);
+  color: white;
+  box-shadow: 0 24px 80px #0003;
+  animation: appear .8s ease;
+}
+
+.eyebrow {
+  color: var(--mint);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.welcome h1 {
+  font-size: clamp(3.5rem, 11vw, 6.5rem);
+  letter-spacing: -.07em;
+  margin: 22px 0 14px;
+}
+
+.welcome h1 span { color: var(--lime); }
+
+.tagline {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--mint);
+  margin-bottom: 15px;
+}
+
+.welcome p {
+  max-width: 510px;
+  margin: auto auto 30px;
+  color: #d4e5dc;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lime);
+  color: #183323;
+  font-weight: 850;
+  box-shadow: 0 8px 22px #0002;
+  transition: .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: #e7ff8b;
+  box-shadow: 0 14px 30px #0004;
+}
+
+.btn:active { transform: scale(.98); }
+
+.btn-dark {
+  background: var(--forest);
+  color: white;
+}
+
+.btn-dark:hover {
+  background: var(--green);
+  color: white;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* NAVEGACIÓN */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f5f8f4ee;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #dce7df;
+}
+
+.nav {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 950;
+  letter-spacing: -.06em;
+  color: var(--forest);
+}
+
+.brand span { color: var(--green); }
+
+.navlinks {
+  display: flex;
+  gap: 23px;
+}
+
+.navlinks a {
+  font-size: .9rem;
+  font-weight: 750;
+  color: #496157;
+  transition: .2s;
+}
+
+.navlinks a:hover {
+  color: var(--green);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--forest);
+}
+
+/* ESTRUCTURA GENERAL */
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+}
+
+section { padding: 78px 0; }
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: 34px;
+}
+
+.kicker {
+  color: var(--green);
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -.06em;
+  color: var(--forest);
+  margin: 10px 0;
+}
+
+.section-head p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* PORTADA */
+
+.hero {
+  padding: 90px 0 78px;
+  background: linear-gradient(130deg, #e7f3e9, #f5f8f4 60%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.hero h2 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: .98;
+  letter-spacing: -.075em;
+  margin: 18px 0;
+  color: var(--forest);
+}
+
+.hero h2 span { color: var(--green); }
+
+.hero p {
+  max-width: 650px;
+  color: #526b60;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.hero-art {
+  aspect-ratio: 1;
+  border-radius: 34px;
+  background: linear-gradient(145deg, #123c2d, #2c8059);
+  display: grid;
+  place-items: center;
+  color: var(--lime);
+  box-shadow: 0 25px 60px #1d6b4e30;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-art:before,
+.hero-art:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #ffffff38;
+  border-radius: 50%;
+  width: 78%;
+  aspect-ratio: 1;
+}
+
+.hero-art:after { width: 55%; }
+
+.cell-icon {
+  font-size: 8rem;
+  z-index: 1;
+}
+
+/* INTEGRANTES */
+
+.members { background: white; }
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.member {
+  padding: 22px 17px;
+  border: 1px solid #e1ebe3;
+  border-radius: 17px;
+  background: #fbfdfb;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  transition: .25s ease;
+}
+
+.member:hover {
+  transform: translateY(-6px);
+  border-color: #a6d2b4;
+  box-shadow: 0 15px 30px #174b3014;
+}
+
+.avatar {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #e3f2e7;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.member strong {
+  font-size: .94rem;
+  line-height: 1.35;
+}
+
+/* INFORMACIÓN */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid #e1eae3;
+  border-radius: 20px;
+  padding: 25px;
+  transition: .25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px #183d2910;
+}
+
+.info-card .number {
+  font-size: .75rem;
+  font-weight: 900;
+  color: var(--green);
+  letter-spacing: .12em;
+}
+
+.info-card h3 {
+  margin: 10px 0;
+  color: var(--forest);
+  font-size: 1.25rem;
+}
+
+.info-card p,
+.info-card li {
+  color: #5e7067;
+  line-height: 1.7;
+}
+
+.wide { grid-column: 1 / -1; }
+
+/* EXPERIMENTO */
+
+.results {
+  background: var(--forest);
+  color: white;
+}
+
+.results .section-head h2 { color: white; }
+.results .section-head p { color: #c2d8cb; }
+.results .kicker { color: var(--lime); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.step {
+  padding: 22px;
+  border-radius: 17px;
+  background: #eaf4ec;
+  border: 1px solid #d8e9dc;
+}
+
+.step b {
+  display: block;
+  color: var(--green);
+  font-size: .8rem;
+  margin-bottom: 9px;
+}
+
+.step p {
+  color: #536b5e;
+  line-height: 1.65;
+}
+
+/* TABLA DE RESULTADOS */
+
+.results-table-wrap {
+  overflow-x: auto;
+  margin-top: 25px;
+  border: 1px solid #ffffff30;
+  border-radius: 16px;
+}
+
+.results-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  background: #ffffff0a;
+  color: #f2faf4;
+}
+
+.results-table th,
+.results-table td {
+  padding: 17px 18px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff24;
+  line-height: 1.55;
+}
+
+.results-table th {
+  background: #ffffff12;
+  color: var(--lime);
+  font-size: .85rem;
+}
+
+.results-table tbody tr:last-child td { border-bottom: 0; }
+
+.results-table tbody tr:hover {
+  background: #ffffff0b;
+}
+
+/* GOOGLE DRIVE */
+
+.drive {
+  background: linear-gradient(135deg, #e5f2e7, #f7faf6);
+}
+
+.drive-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 35px;
+  align-items: center;
+  padding: 35px;
+  border: 1px solid #d7e8da;
+  background: #ffffffc9;
+  border-radius: 25px;
+}
+
+.drive-card h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  letter-spacing: -.06em;
+  margin: 10px 0;
+  color: var(--forest);
+}
+
+.drive-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 590px;
+  margin-bottom: 20px;
+}
+
+.qr-wrap {
+  width: 175px;
+  height: 175px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #e0e9e1;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  box-shadow: 0 10px 25px #183d2910;
+  transition: .25s ease;
+}
+
+.qr-wrap:hover {
+  transform: scale(1.07);
+  box-shadow: 0 16px 34px #1d6b4e25;
+}
+
+.qr-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+footer {
+  padding: 28px 0;
+  background: #0b211c;
+  color: #a9c3b4;
+  text-align: center;
+  font-size: .85rem;
+}
+
+footer strong { color: white; }
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-art { max-width: 300px; margin: auto; }
+  .member-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 620px) {
+  .menu-toggle { display: block; }
+
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: var(--paper);
+    flex-direction: column;
+  }
+
+  .navlinks.open { display: flex; }
+
+  .hero { padding: 60px 0; }
+  .hero-art { max-width: 220px; }
+
+  .member-grid,
+  .content-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .wide { grid-column: auto; }
+
+  .drive-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .qr-wrap { margin: auto; }
+  section { padding: 60px 0; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
 </style>
 </head>
+
 <body>
+
+<!-- BIENVENIDA -->
+
 <div class="welcome" id="welcome">
   <div class="welcome-card">
     <div class="eyebrow">Proyecto de investigación</div>
     <h1>Eco<span>Cell</span></h1>
     <div class="tagline">Energía que nace de la naturaleza</div>
-    <p>Una propuesta que explora cómo los microorganismos pueden ayudar a transformar la materia orgánica en energía eléctrica.</p>
-    <button class="btn" id="enterBtn">Ingresar al proyecto <span aria-hidden="true">→</span></button>
+    <p>
+      Una propuesta que explora cómo los microorganismos pueden ayudar
+      a transformar la materia orgánica en energía eléctrica.
+    </p>
+    <button class="btn" id="enterBtn">
+      Ingresar al proyecto →
+    </button>
   </div>
 </div>
+
 <header>
   <nav class="nav">
-    <a class="brand" href="#inicio" aria-label="EcoCell inicio">Eco<span>Cell</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <a class="brand" href="#inicio">Eco<span>Cell</span></a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
     <div class="navlinks" id="navlinks">
-      <a href="#integrantes">Integrantes</a><a href="#proyecto">Proyecto</a><a href="#experimento">Experimento</a><a href="#drive">Google Drive</a>
+      <a href="#integrantes">Integrantes</a>
+      <a href="#proyecto">Proyecto</a>
+      <a href="#experimento">Experimento</a>
+      <a href="#drive">Google Drive</a>
     </div>
   </nav>
 </header>
+
 <main>
-  <section class="hero" id="inicio">
-    <div class="container hero-grid">
+
+<!-- PORTADA -->
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow" style="color:#1d6b4e">
+        Ciencia · Innovación · Sostenibilidad
+      </div>
+
+      <h2>
+        Pequeños organismos.<br>
+        <span>Gran energía.</span>
+      </h2>
+
+      <p>
+        EcoCell estudia las celdas de combustible microbianas:
+        sistemas que aprovechan la actividad de microorganismos
+        para obtener energía eléctrica a partir de materia orgánica.
+      </p>
+
+      <a class="btn btn-dark" href="#proyecto">
+        Conocer el proyecto ↓
+      </a>
+    </div>
+
+    <div class="hero-art">
+      <div class="cell-icon">✳</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTEGRANTES -->
+
+<section class="members" id="integrantes">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Nuestro equipo</div>
+      <h2>Integrantes</h2>
+      <p>Estudiantes que desarrollan y presentan el proyecto EcoCell.</p>
+    </div>
+
+    <div class="member-grid">
+
+      <div class="member">
+        <div class="avatar">AM</div>
+        <strong>Albeiro Montalvo</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">AS</div>
+        <strong>Arián Salinas</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">NC</div>
+        <strong>Nicolás Chuquiruna</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">ZG</div>
+        <strong>Zair Gonzales</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">JP</div>
+        <strong>Jeyro Paz</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">EC</div>
+        <strong>Edwin Chávez</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">FH</div>
+        <strong>Frank Hernandez</strong>
+      </div>
+
+      <div class="member">
+        <div class="avatar">VM</div>
+        <strong>Valentino Mendoza</strong>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INFORMACIÓN DEL PROYECTO -->
+
+<section id="proyecto">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Conoce EcoCell</div>
+      <h2>¿De qué trata el proyecto?</h2>
+      <p>
+        Conoce el fundamento científico y la propuesta experimental
+        de nuestra investigación.
+      </p>
+    </div>
+
+    <div class="content-grid">
+
+      <article class="info-card">
+        <div class="number">01 · CONCEPTO</div>
+        <h3>¿Qué es una celda de combustible microbiana?</h3>
+        <p>
+          Es un sistema bioelectroquímico en el que ciertos
+          microorganismos transforman la energía química de
+          compuestos orgánicos y transfieren electrones a un electrodo.
+          El movimiento de esos electrones por un circuito externo
+          puede producir corriente eléctrica.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="number">02 · IMPORTANCIA</div>
+        <h3>¿Por qué investigarlo?</h3>
+        <p>
+          Permite explorar una tecnología que relaciona microbiología,
+          química y electricidad, y estudiar posibles formas de
+          recuperar energía de materiales orgánicos.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="number">03 · INVESTIGACIÓN</div>
+        <h3>Problema de investigación</h3>
+        <p>
+          Aquí se presenta el problema que motivó el desarrollo
+          del proyecto y la pregunta que buscamos responder.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="number">04 · PROPÓSITO</div>
+        <h3>Objetivos e hipótesis</h3>
+        <p>
+          Nuestro propósito es estudiar la generación de electricidad
+          mediante una celda de combustible microbiana y analizar
+          cómo influye la cantidad de residuos vegetales.
+        </p>
+      </article>
+
+      <article class="info-card wide">
+        <div class="number">05 · FUNDAMENTO CIENTÍFICO</div>
+        <h3>¿Cómo se genera electricidad?</h3>
+        <p>
+          En una celda microbiana, los microorganismos degradan
+          sustancias orgánicas y, bajo condiciones adecuadas,
+          liberan electrones. En una configuración típica, los
+          electrones llegan al ánodo y viajan por un circuito externo
+          hacia el cátodo. El flujo de electrones constituye
+          la corriente eléctrica.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="number">06 · MATERIALES</div>
+        <h3>Materiales utilizados</h3>
+        <p>
+          En esta sección se describen los materiales empleados
+          para construir nuestras celdas experimentales.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="number">07 · PROCEDIMIENTO</div>
+        <h3>Construcción y prueba</h3>
+        <p>
+          Se prepararon celdas con distintas cantidades de residuos
+          vegetales para observar y comparar el voltaje obtenido.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+
+<section class="results" id="experimento">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Prueba experimental</div>
+      <h2>Resultados del experimento</h2>
+      <p>
+        Comparación del voltaje obtenido en las tres celdas
+        según la cantidad de residuos vegetales.
+      </p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <b>MEDICIÓN 01</b>
+        <p>
+          Se registró el voltaje producido por cada celda
+          utilizando un multímetro.
+        </p>
+      </div>
+
+      <div class="step">
+        <b>MEDICIÓN 02</b>
+        <p>
+          Se compararon las mediciones de acuerdo con
+          la cantidad de residuos vegetales utilizados.
+        </p>
+      </div>
+
+      <div class="step">
+        <b>ANÁLISIS</b>
+        <p>
+          Se organizaron los resultados para observar
+          las diferencias entre las tres celdas.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="results-table-wrap">
+      <table class="results-table">
+
+        <thead>
+          <tr>
+            <th>Celda</th>
+            <th>Residuos vegetales</th>
+            <th>Voltaje obtenido</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>A</strong></td>
+            <td>Ninguno</td>
+            <td><strong>0.30 V</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>B</strong></td>
+            <td>Poca cantidad de residuos vegetales</td>
+            <td><strong>0.40 V</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>C</strong></td>
+            <td>Mayor cantidad de residuos vegetales</td>
+            <td><strong>0.45 V</strong></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- GOOGLE DRIVE Y QR -->
+
+<section class="drive" id="drive">
+  <div class="container">
+
+    <div class="drive-card">
+
       <div>
-        <div class="eyebrow" style="color:#1d6b4e">Ciencia · Innovación · Sostenibilidad</div>
-        <h2>Pequeños organismos.<br><span>Gran energía.</span></h2>
-        <p>EcoCell estudia las celdas de combustible microbianas: sistemas que aprovechan la actividad de microorganismos para obtener energía eléctrica a partir de materia orgánica.</p>
-        <a class="btn btn-dark" href="#proyecto">Conocer el proyecto <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="hero-art" aria-label="Ilustración abstracta de energía natural"><div class="cell-icon">✳</div></div>
-    </div>
-  </section>
+        <div class="kicker">Información complementaria</div>
 
-  <section class="members" id="integrantes">
-    <div class="container">
-      <div class="section-head"><div class="kicker">Nuestro equipo</div><h2>Integrantes</h2><p>Estudiantes que desarrollan y presentan el proyecto EcoCell.</p></div>
-      <div class="member-grid">
-        <div class="member"><div class="avatar">AM</div><strong>Albeiro Montalvo</strong></div>
-        <div class="member"><div class="avatar">AS</div><strong>Arián Salinas</strong></div>
-        <div class="member"><div class="avatar">NC</div><strong>Nicolás Chuquiruna</strong></div>
-        <div class="member"><div class="avatar">ZG</div><strong>Zair Gonzales</strong></div>
-        <div class="member"><div class="avatar">JP</div><strong>Jeyro Paz</strong></div>
-        <div class="member"><div class="avatar">EC</div><strong>Edwin Chávez</strong></div>
-        <div class="member"><div class="avatar">FH</div><strong>Frank Hernandez</strong></div>
-        <div class="member"><div class="avatar">VM</div><strong>Valentino Mendoza</strong></div>
-      </div>
-    </div>
-  </section>
+        <h2>Explora el proyecto completo</h2>
 
-  <section id="proyecto">
-    <div class="container">
-      <div class="section-head"><div class="kicker">Conoce EcoCell</div><h2>¿De qué trata el proyecto?</h2><p>Esta sección reúne la información principal para explicar el fundamento y la propuesta experimental. Los apartados marcados como pendientes se completarán con los datos definitivos del equipo.</p></div>
-      <div class="content-grid">
-        <article class="info-card"><div class="number">01 · CONCEPTO</div><h3>¿Qué es una celda de combustible microbiana?</h3><p>Es un sistema bioelectroquímico en el que ciertos microorganismos transforman la energía química de compuestos orgánicos y transfieren electrones a un electrodo. El movimiento de esos electrones por un circuito externo puede producir corriente eléctrica.</p></article>
-        <article class="info-card"><div class="number">02 · IMPORTANCIA</div><h3>¿Por qué investigarlo?</h3><p>Permite explorar una tecnología que relaciona microbiología, química y electricidad, y estudiar posibles formas de recuperar energía de materiales orgánicos.</p></article>
-        <article class="info-card"><div class="number">03 · INVESTIGACIÓN</div><h3>Problema y pregunta</h3><p><strong>Por completar:</strong> incorporar aquí la pregunta de investigación y la descripción del problema tal como fueron definidos en el trabajo del equipo.</p></article>
-        <article class="info-card"><div class="number">04 · PROPÓSITO</div><h3>Objetivo e hipótesis</h3><p><strong>Por completar:</strong> añadir el objetivo general, los objetivos específicos y la hipótesis aprobada para el experimento.</p></article>
-        <article class="info-card wide"><div class="number">05 · FUNDAMENTO CIENTÍFICO</div><h3>¿Cómo se genera electricidad?</h3><p>En una celda microbiana, los microorganismos degradan sustancias orgánicas y, bajo condiciones adecuadas, liberan electrones. En una configuración típica, los electrones llegan al ánodo y viajan por un circuito externo hacia el cátodo; el flujo de electrones constituye la corriente eléctrica. El diseño concreto y las reacciones dependen de los materiales y condiciones de la celda construida.</p></article>
-        <article class="info-card"><div class="number">06 · MATERIALES</div><h3>Materiales utilizados</h3><p><strong>Por completar:</strong> colocar la lista exacta de materiales y cantidades que el grupo utilizará, sin agregar componentes que no formen parte del prototipo.</p></article>
-        <article class="info-card"><div class="number">07 · PROCEDIMIENTO</div><h3>Construcción y prueba</h3><p><strong>Por completar:</strong> describir el armado real de la celda, las condiciones de prueba y el método de medición.</p></article>
-      </div>
-    </div>
-  </section>
+        <p>
+          Escanea el código QR o utiliza el botón para acceder
+          a la carpeta de Google Drive con el informe y las
+          evidencias del proyecto EcoCell.
+        </p>
 
-  <section class="results" id="experimento">
-    <div class="container">
-      <div class="section-head"><div class="kicker">Prueba experimental</div><h2>Medimos lo que generamos</h2><p>El desempeño de EcoCell se evaluará mediante mediciones directas con un multímetro.</p></div>
-      <div class="steps">
-        <div class="step"><b>MEDICIÓN 01</b><p>Registrar el voltaje producido por la celda y anotar las condiciones de la medición.</p></div>
-        <div class="step"><b>MEDICIÓN 02</b><p>Medir la corriente eléctrica utilizando el procedimiento y la conexión adecuados para el circuito.</p></div>
-        <div class="step"><b>ANÁLISIS</b><p>Organizar los datos en una tabla y comparar los resultados obtenidos durante el experimento.</p></div>
-      </div>
-      <div class="result-note" style="margin-top:18px"><strong>Resultados:</strong> espacio reservado para incorporar las mediciones reales de voltaje y corriente. No se muestran cifras de ejemplo para evitar confundirlas con resultados experimentales.</div>
-    </div>
-  </section>
-
-  <section class="drive" id="drive">
-    <div class="container">
-      <div class="drive-card">
-        <div>
-          <div class="kicker">Información complementaria</div>
-          <h2>Explora el proyecto completo</h2>
-          <p>Escanea el código QR o utiliza el botón para abrir la carpeta de Google Drive con el informe, evidencias y documentos de EcoCell.</p>
-          <a class="btn btn-dark" id="driveButton" href="#" target="_blank" rel="noopener">Abrir Google Drive <span aria-hidden="true">↗</span></a>
-          <p id="driveStatus" style="font-size:.82rem;margin-bottom:0">Falta configurar el enlace de Google Drive.</p>
-        </div>
-        <a class="qr-wrap" id="qrLink" href="#" target="_blank" rel="noopener" aria-label="Abrir Google Drive desde el código QR">
-          <div class="qr-placeholder" id="qrPlaceholder">El código QR aparecerá aquí cuando se configure el enlace de Drive.</div>
-          <img id="qrImage" alt="Código QR para abrir Google Drive" hidden>
+        <a
+          class="btn btn-dark"
+          href="https://drive.google.com/drive/folders/1oFIlwgFN0fG0xQFJ-2IpMzgZEYtciugo?usp=sharing"
+          target="_blank"
+          rel="noopener">
+          Abrir Google Drive ↗
         </a>
       </div>
+
+      <a
+        class="qr-wrap"
+        href="https://drive.google.com/drive/folders/1oFIlwgFN0fG0xQFJ-2IpMzgZEYtciugo?usp=sharing"
+        target="_blank"
+        rel="noopener"
+        aria-label="Abrir Google Drive">
+
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1oFIlwgFN0fG0xQFJ-2IpMzgZEYtciugo%3Fusp%3Dsharing"
+          alt="Código QR de EcoCell">
+
+      </a>
+
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
-<footer><div class="container"><strong>EcoCell</strong> · Energía que nace de la naturaleza</div></footer>
+
+<footer>
+  <div class="container">
+    <strong>EcoCell</strong> · Energía que nace de la naturaleza
+  </div>
+</footer>
+
 <script>
-/* Pega aquí el enlace compartido de Google Drive cuando lo tengas. */
-const DRIVE_URL = "";
+
+// Pantalla de bienvenida
+
 const welcome = document.getElementById("welcome");
+
 document.getElementById("enterBtn").addEventListener("click", () => {
   welcome.classList.add("hide");
   document.body.style.overflow = "";
-  document.getElementById("inicio").scrollIntoView({behavior:"smooth"});
+  document.getElementById("inicio").scrollIntoView({
+    behavior: "smooth"
+  });
 });
+
 document.body.style.overflow = "hidden";
+
+// Menú para celulares
+
 const menuToggle = document.getElementById("menuToggle");
 const navlinks = document.getElementById("navlinks");
+
 menuToggle.addEventListener("click", () => {
   const open = navlinks.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", String(open));
   menuToggle.textContent = open ? "×" : "☰";
 });
-navlinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-  navlinks.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded","false");
-  menuToggle.textContent = "☰";
-}));
-if (DRIVE_URL.trim()) {
-  const url = DRIVE_URL.trim();
-  const driveButton = document.getElementById("driveButton");
-  const qrLink = document.getElementById("qrLink");
-  const qrImage = document.getElementById("qrImage");
-  driveButton.href = url;
-  qrLink.href = url;
-  qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=" + encodeURIComponent(url);
-  qrImage.hidden = false;
-  document.getElementById("qrPlaceholder").hidden = true;
-  document.getElementById("driveStatus").textContent = "Enlace configurado. El QR y el botón llevan al mismo destino.";
-}
+
+navlinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
 </script>
+
 </body>
 </html>
